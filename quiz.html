@@ -1,24 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Quiz Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .quiz-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+    }
+    h1 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #45a049;
+      transform: scale(1.02);
+    }
+    #result {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <h1>Quick Quiz</h1>
-  <p>When was the Battle of Dien Bien Phu?</p>
-  <button onclick="checkAnswer('1954')">1954</button>
-  <button onclick="checkAnswer('1945')">1945</button>
-  <button onclick="checkAnswer('1975')">1975</button>
-
-  <p id="result"></p>
+  <div class="quiz-box">
+    <h1>Quick Quiz</h1>
+    <p>When was the Battle of Dien Bien Phu?</p>
+    <button onclick="checkAnswer('1954')">1954</button>
+    <button onclick="checkAnswer('1945')">1945</button>
+    <button onclick="checkAnswer('1975')">1975</button>
+    <p id="result"></p>
+  </div>
 
   <script>
     function checkAnswer(answer) {
       if (answer === '1954') {
         document.getElementById('result').innerText = "✅ Correct!";
+        document.getElementById('result').style.color = "green";
       } else {
         document.getElementById('result').innerText = "❌ Try again!";
+        document.getElementById('result').style.color = "red";
       }
     }
   </script>
