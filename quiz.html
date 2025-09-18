@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Page</title>
+</head>
+<body>
+  <h1>Quick Quiz</h1>
+  <p>When was the Battle of Dien Bien Phu?</p>
+  <button onclick="checkAnswer('1954')">1954</button>
+  <button onclick="checkAnswer('1945')">1945</button>
+  <button onclick="checkAnswer('1975')">1975</button>
+
+  <p id="result"></p>
+
+  <script>
+    function checkAnswer(answer) {
+      if (answer === '1954') {
+        document.getElementById('result').innerText = "✅ Correct!";
+      } else {
+        document.getElementById('result').innerText = "❌ Try again!";
+      }
+    }
+  </script>
+</body>
+</html>
