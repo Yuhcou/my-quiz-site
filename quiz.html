@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Quiz Page</title>
+  <title>Anh hùng Phan Đình Giót</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -21,11 +21,16 @@
       border-radius: 1.5rem;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       text-align: center;
-      max-width: 400px;
+      max-width: 450px;
+      width: 90%;
     }
     h1 {
       margin-bottom: 1rem;
       color: #333;
+    }
+    p.question {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
     }
     button {
       display: block;
@@ -54,22 +59,58 @@
 </head>
 <body>
   <div class="quiz-box">
-    <h1>Quick Quiz</h1>
-    <p>When was the Battle of Dien Bien Phu?</p>
-    <button onclick="checkAnswer('1954')">1954</button>
-    <button onclick="checkAnswer('1945')">1945</button>
-    <button onclick="checkAnswer('1975')">1975</button>
+    <h1>Anh hùng Phan Đình Giót</h1>
+    <p id="question" class="question"></p>
+    <div id="answers"></div>
     <p id="result"></p>
   </div>
 
   <script>
-    function checkAnswer(answer) {
-      if (answer === '1954') {
-        document.getElementById('result').innerText = "✅ Correct!";
-        document.getElementById('result').style.color = "green";
+    const questions = [
+      {
+        q: "Anh hùng Phan Đình Giót quê ở đâu?",
+        options: ["Hà Tĩnh", "Nghệ An", "Thanh Hóa", "Quảng Bình"],
+        answer: "Hà Tĩnh"
+      },
+      {
+        q: "Phan Đình Giót hy sinh trong trận đánh cứ điểm nào?",
+        options: ["Him Lam", "Độc Lập", "A1", "Hồng Cúm"],
+        answer: "Him Lam"
+      },
+      {
+        q: "Hành động anh hùng gắn liền với tên tuổi Phan Đình Giót là gì?",
+        options: ["Lấy thân mình chèn pháo", "Lấy thân mình lấp lỗ châu mai", "Dùng thân làm giá súng", "Cầm cờ xung phong"],
+        answer: "Lấy thân mình lấp lỗ châu mai"
+      },
+      {
+        q: "Năm hy sinh của anh hùng Phan Đình Giót là?",
+        options: ["1953", "1954", "1952", "1955"],
+        answer: "1954"
+      }
+    ];
+
+    // chọn ngẫu nhiên 1 câu hỏi
+    const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+
+    // hiển thị câu hỏi
+    document.getElementById("question").innerText = randomQuestion.q;
+
+    const answersDiv = document.getElementById("answers");
+    randomQuestion.options.forEach(option => {
+      const btn = document.createElement("button");
+      btn.innerText = option;
+      btn.onclick = () => checkAnswer(option);
+      answersDiv.appendChild(btn);
+    });
+
+    function checkAnswer(selected) {
+      const result = document.getElementById("result");
+      if (selected === randomQuestion.answer) {
+        result.innerText = "✅ Chính xác!";
+        result.style.color = "green";
       } else {
-        document.getElementById('result').innerText = "❌ Try again!";
-        document.getElementById('result').style.color = "red";
+        result.innerText = "❌ Sai rồi, thử lại!";
+        result.style.color = "red";
       }
     }
   </script>
