@@ -2,28 +2,47 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Anh hùng Phan Đình Giót</title>
+  <title>Anh hùng Trần Can</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: #f5f7fa;
       margin: 0;
       padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      position: relative;
+      overflow: hidden;
     }
+
+    /* Background blur */
+    .background-blur {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('../images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      filter: blur(8px);
+      opacity: 0.5;
+      z-index: -1;
+    }
+
     .quiz-box {
-      background: white;
+      background: rgba(255, 255, 255, 0.9);
       padding: 2rem;
       border-radius: 1.5rem;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       text-align: center;
       max-width: 450px;
       width: 90%;
+      z-index: 1;
+      position: relative;
     }
+
     h1 {
       margin-bottom: 1rem;
       color: #333;
@@ -55,44 +74,95 @@
       font-size: 1.2rem;
       font-weight: bold;
     }
+
+    .home-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .home-button img {
+      width: 70px;
+      height: auto;
+      transition: 0.3s;
+    }
+    .home-button img:hover {
+      transform: scale(1.1);
+    }
+
+    .info-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background: #1976d2;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s, transform 0.3s;
+    }
+    .info-button:hover {
+      background-color: #1565c0;
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
+
+  <div class="background-blur"></div>
+
+  <a href="../home-page/index.html" class="home-button">
+    <img src="../images/logo-preview.png" alt="Trang chủ">
+  </a>
+
   <div class="quiz-box">
-    <h1>Anh hùng Phan Đình Giót</h1>
+    <h1>Anh hùng Trần Can</h1>
     <p id="question" class="question"></p>
     <div id="answers"></div>
     <p id="result"></p>
+
+    <a href="info.html" class="info-button">Tìm hiểu thêm</a>
   </div>
 
   <script>
+    function shuffle(array) {
+      return array.sort(() => Math.random() - 0.5);
+    }
+
     const questions = [
       {
-        q: "Anh hùng Phan Đình Giót quê ở đâu?",
-        options: ["Hà Tĩnh", "Nghệ An", "Thanh Hóa", "Quảng Bình"],
-        answer: "Hà Tĩnh"
+        q: "Anh hùng Trần Can quê ở đâu?",
+        options: shuffle(["Quảng Trị", "Thanh Hóa", "Hà Tĩnh", "Nghệ An"]),
+        answer: "Thanh Hóa"
       },
       {
-        q: "Phan Đình Giót hy sinh trong trận đánh cứ điểm nào?",
-        options: ["Him Lam", "Độc Lập", "A1", "Hồng Cúm"],
-        answer: "Him Lam"
+        q: "Trần Can nổi bật với hành động nào trong chiến dịch Điện Biên Phủ?",
+        options: shuffle([
+          "Lấy thân chèn pháo",
+          "Lấp lỗ châu mai",
+          "Quyết tử giữ trận địa dù bị thương nặng",
+          "Làm giá súng"
+        ]),
+        answer: "Quyết tử giữ trận địa dù bị thương nặng"
       },
       {
-        q: "Hành động anh hùng gắn liền với tên tuổi Phan Đình Giót là gì?",
-        options: ["Lấy thân mình chèn pháo", "Lấy thân mình lấp lỗ châu mai", "Dùng thân làm giá súng", "Cầm cờ xung phong"],
-        answer: "Lấy thân mình lấp lỗ châu mai"
-      },
-      {
-        q: "Năm hy sinh của anh hùng Phan Đình Giót là?",
-        options: ["1953", "1954", "1952", "1955"],
-        answer: "1954"
+        q: "Sự hy sinh của Trần Can góp phần quan trọng vào việc gì?",
+        options: shuffle([
+          "Giữ vững trận địa cho đơn vị",
+          "Tiêu diệt nhiều xe tăng địch",
+          "Mở đường cho bộ đội tiến công Him Lam",
+          "Đảm bảo công tác hậu cần"
+        ]),
+        answer: "Giữ vững trận địa cho đơn vị"
       }
     ];
 
-    // chọn ngẫu nhiên 1 câu hỏi
     const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
-
-    // hiển thị câu hỏi
     document.getElementById("question").innerText = randomQuestion.q;
 
     const answersDiv = document.getElementById("answers");

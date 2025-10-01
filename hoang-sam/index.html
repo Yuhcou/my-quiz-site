@@ -2,56 +2,163 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Anh hùng Phan Đình Giót</title>
+  <title>Tiểu sử Thiếu tướng Hoàng Sâm</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ece9e6, #ffffff);
       margin: 0;
       padding: 0;
-      text-align: center;
+      line-height: 1.8;
       color: #333;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
+
+    /* Background blur */
+    .background-blur {
+      position: fixed;
+      inset: 0;
+      background: url('../images/background.jpg') no-repeat center center / cover;
+      filter: blur(8px);
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .home-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .home-button img {
+      width: 56px;
+      height: auto;
+      transition: transform .25s;
+    }
+    .home-button img:hover {
+      transform: scale(1.1);
+    }
+
     header {
       background: #4CAF50;
       color: white;
       padding: 2rem 1rem;
-      border-bottom-left-radius: 2rem;
-      border-bottom-right-radius: 2rem;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 2.4rem;
     }
-    main {
+
+    .content {
+      max-width: 850px;
+      margin: 2rem auto;
       padding: 2rem;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
-    a.button {
+
+    .content img {
+      width: 100%;
+      border-radius: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    figure {
+      margin: 2rem 0;
+      text-align: center;
+    }
+    figure img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    figcaption {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+
+    .back-to-quiz {
       display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
       background: #4CAF50;
       color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 10px;
       text-decoration: none;
+      border-radius: 10px;
       font-weight: 600;
-      transition: 0.3s;
+      transition: background .3s, transform .3s;
     }
-    a.button:hover {
+    .back-to-quiz:hover {
       background: #45a049;
       transform: scale(1.05);
     }
   </style>
 </head>
 <body>
+
+  <div class="background-blur"></div>
+
+  <a class="home-button" href="../home-page/index.html" title="Về trang chủ">
+    <img src="../images/logo-preview.png" alt="Trang chủ">
+  </a>
+
   <header>
-    <h1>Anh hùng Hoàng Sâm</h1>
-    <p>Trang web giới thiệu và kiểm tra kiến thức</p>
+    <h1>Thiếu tướng Hoàng Sâm - Người con ưu tú của Quảng Bình</h1>
   </header>
-  <main>
-    <p>Nhấn nút bên dưới để bắt đầu trả lời câu hỏi:</p>
-    <a class="button" href="quiz.html">Bắt đầu Quiz</a>
-  </main>
+
+  <div class="content">
+    <p>Trong suốt chiều dài lịch sử, mảnh đất Quảng Bình đã sản sinh ra nhiều người con ưu tú cho dân tộc, trong đó phải kể đến Thiếu tướng Hoàng Sâm, Đội trưởng đầu tiên và một trong những Thiếu tướng đầu tiên của Quân đội nhân dân Việt Nam, người mà tên tuổi và sự nghiệp đều gắn liền với những bước trưởng thành của Quân đội Nhân dân Việt Nam.</p>
+
+    <p>Sinh năm 1915 ở xã Lệ Sơn (nay là xã Văn Hóa), huyện Tuyên Hóa, tỉnh Quảng Bình, một mảnh đất giàu truyền thống cách mạng, Trần Văn Kỳ (tên thật của Thiếu tướng Hoàng Sâm) đã sớm hình thành khí phách anh hùng của người đảng viên cộng sản không cam chịu cảnh áp bức, bất công, đứng dậy đấu tranh chống lại kẻ thù.</p>
+
+    <p>Trong những thập niên đầu của Thế kỷ XX, do hoàn cảnh bần cùng, không có ruộng đất cày, cậu bé Trần Văn Kỳ đã phải theo gia đình rời bỏ quê hương sang Thái Lan để tìm kế sinh nhai. Trong những năm sống tại đây, nhờ sự sáng dạ và nhanh nhẹn, Trần Văn Kỳ đã được Thầu Chín (bí danh của Chủ tịch Hồ Chí Minh sử dụng trong thời gian hoạt động tại Thái Lan) lựa chọn và huấn luyện trở thành liên lạc của Người. Dưới sự dìu dắt của Thầu Chín, Trần Văn Kỳ đã tích cực tuyên truyền vận động bà con Việt kiều tham gia các tổ chức cách mạng.</p>
+
+    <figure>
+      <img src="../images/hoang-sam-1.jpg" alt="Thiếu tướng Hoàng Sâm">
+      <figcaption>Thiếu tướng Hoàng Sâm</figcaption>
+    </figure>
+
+    <p>Năm 1933, chàng thanh niên Trần Văn Kỳ được kết nạp vào Đảng Cộng sản Đông Dương và được giao phụ trách địa điểm liên lạc và in phát truyền đơn. Trong thời gian ở Thái Lan, Trần Văn Kỳ thể hiện là một đảng viên năng nổ và có nhiều đóng góp cho phong trào yêu nước của bà con Việt kiều.</p>
+
+    <p>Năm 1934, Trần Văn Kỳ bị lộ và bị mật thám Thái Lan bắt giam rồi trao cho Lãnh sự quán Pháp. Sau một năm giam giữ, do không có bằng chứng kết tội, Trần Văn Kỳ được thả và bị trục xuất khỏi Thái Lan. Sau bị trục xuất, Trần Văn Kỳ không về quê nhà mà được tổ chức bí mật đưa sang Trung Quốc tiếp tục hoạt động. Năm 1936, Trần Văn Kỳ đến Quảng Tây và được cử đi học tiếng Trung Quốc.</p>
+
+    <p>Đầu năm 1937, theo sự phân công của cấp trên, Trần Văn Kỳ về nước và làm việc tại Tỉnh uỷ Cao Bằng phụ trách cơ quan in và công tác giao thông liên lạc ở biên giới cho tới năm 1939. Năm 1940, Trần Văn Kỳ sang Tĩnh Tây để bắt liên lạc với cấp trên.</p>
+
+    <p>Cũng tại đây, Trần Văn Kỳ được gặp lại Thầu Chín và được tham dự lớp huấn luyện cán bộ về công tác tổ chức đoàn thể quần chúng do Người trực tiếp giảng dạy. Khi này, Trần Văn Kỳ mới biết Thầu Chín chính là Bác Hồ và được Bác đặt tên là Hoàng Sâm.</p>
+
+    <p>Đầu năm 1941, Hoàng Sâm được cấp trên giao nhiệm vụ cùng các đồng chí Phùng Chí Kiên, Lê Quảng Ba, Đặng Văn Cáp... bảo vệ Bác Hồ từ Trung Quốc trở về Pác Bó (Cao Bằng) sau 30 năm hoạt động ở nước ngoài. Cuối năm 1941, Đội du kích Cao Bằng gồm 12 người được thành lập, Hoàng Sâm được cử làm Đội phó.</p>
+
+    <p>Giữa năm 1942, ông được giao làm Đội trưởng. Trên cương vị là Đội phó rồi Đội trưởng, Hoàng Sâm nổi tiếng là một nhà hoạt động cách mạng kinh nghiệm, gan dạ, mưu trí với có biệt tài bắn súng, cưỡi ngựa, khiến các toán phỉ phải dè chừng.</p>
+
+    <p>Từ 1940-1943, ông làm Đội trưởng Đội vũ trang tuyên truyền của Tổng bộ Việt Minh và Tỉnh ủy viên tỉnh Bắc Kạn phụ trách tự vệ chiến đấu trừ gian và củng cố cơ sở cách mạng, tổ chức du kích khu vực biên giới hai tỉnh Cao Bằng, Lạng Sơn.</p>
+
+    <p>Ngày 22-12-1944, Hoàng Sâm được tín nhiệm bầu làm Đội trưởng đầu tiên của Đội Việt Nam tuyên truyền giải phóng quân (tiền thân của Quân đội nhân dân Việt Nam) và trực tiếp chỉ huy đánh thắng Phai Khắt, Nà Ngần, Đồng Mu, mở đầu cho truyền thống "bách chiến, bách thắng" của Quân đội nhân dân Việt Nam.</p>
+
+    <p>Trong giai đoạn kháng chiến chống Pháp (1946-1950), đồng chí được giao giữ chức vụ Khu trưởng Khu 2, Chỉ huy Mặt trận Tây tiến, Tư lệnh Liên khu 3. Ngày 20-1-1948, Chủ tịch Hồ Chí Minh ký Sắc lệnh phong quân hàm Thiếu tướng cho Hoàng Sâm khi ông mới 33 tuổi.</p>
+
+    <p>Từ 1951-1954, đồng chí là phái viên của Bộ Quốc phòng tham gia chiến dịch với các Đại đoàn 312, 304, làm Đại đoàn trưởng Đại đoàn 304 và Chỉ huy trưởng mặt trận Trung Lào. Sau chiến thắng Điện Biên Phủ, đồng chí làm Đại đoàn trưởng Đại đoàn 320, chỉ huy tiếp quản Hải Phòng. Từ 1955-1968, Thiếu tướng Hoàng Sâm làm Tư lệnh Quân khu Tả Ngạn, Tư lệnh Quân khu Hữu Ngạn và Tư lệnh Quân khu 3. Giữa năm 1968, ông được lệnh vào làm Tư lệnh Quân khu Trị Thiên và hy sinh vào cuối năm đó.</p>
+
+    <p>Thiếu tướng Hoàng Sâm là đại biểu Quốc hội khóa II và khóa III. Ghi nhận những cống hiến đến hơi thở cuối cùng của Thiếu tướng Hoàng Sâm cho cách mạng, Đảng và Nhà nước đã phong, truy tặng nhiều huân chương cao quý cho ông, trong đó có Huân chương Hồ Chí Minh, Huân chương Quân công hạng Nhất, Huân chương Chiến thắng hạng Nhất, Huân chương Khánh chiến hạng Nhất.</p>
+
+    <div class="source">
+      Nguồn bài viết:<br>
+      <a href="https://www.qdnd.vn/tuong-linh-viet-nam/thieu-tuong-hoang-sam-nguoi-con-uu-tu-cua-quang-binh-677855" target="_blank">
+        Thiếu tướng Hoàng Sâm - Người con ưu tú của Quảng Bình
+      </a>
+    </div>
+
+  </div>
+
 </body>
 </html>

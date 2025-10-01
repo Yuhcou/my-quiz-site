@@ -2,56 +2,187 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Anh hùng Phan Đình Giót</title>
+  <title>Tiểu sử Đại tướng Hoàng Văn Thái</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ece9e6, #ffffff);
       margin: 0;
       padding: 0;
-      text-align: center;
+      line-height: 1.8;
       color: #333;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
+
+    /* Background blur */
+    .background-blur {
+      position: fixed;
+      inset: 0;
+      background: url('../images/background.jpg') no-repeat center center / cover;
+      filter: blur(8px);
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .home-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .home-button img {
+      width: 56px;
+      height: auto;
+      transition: transform .25s;
+    }
+    .home-button img:hover {
+      transform: scale(1.1);
+    }
+
     header {
       background: #4CAF50;
       color: white;
       padding: 2rem 1rem;
-      border-bottom-left-radius: 2rem;
-      border-bottom-right-radius: 2rem;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 2.4rem;
     }
-    main {
+
+    .content {
+      max-width: 850px;
+      margin: 2rem auto;
       padding: 2rem;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
-    a.button {
+
+    .content img {
+      width: 100%;
+      border-radius: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    figure {
+      margin: 2rem 0;
+      text-align: center;
+    }
+    figure img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    figcaption {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+
+    .back-to-quiz {
       display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
       background: #4CAF50;
       color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 10px;
       text-decoration: none;
+      border-radius: 10px;
       font-weight: 600;
-      transition: 0.3s;
+      transition: background .3s, transform .3s;
     }
-    a.button:hover {
+    .back-to-quiz:hover {
       background: #45a049;
       transform: scale(1.05);
     }
   </style>
 </head>
 <body>
+
+  <div class="background-blur"></div>
+
+  <a class="home-button" href="../home-page/index.html" title="Về trang chủ">
+    <img src="../images/logo-preview.png" alt="Trang chủ">
+  </a>
+
   <header>
-    <h1>Anh hùng Hoàng Văn Thái</h1>
-    <p>Trang web giới thiệu và kiểm tra kiến thức</p>
+    <h1>Đại tướng Hoàng Văn Thái - Tổng Tham mưu trưởng đầu tiên của Quân đội nhân dân Việt Nam</h1>
   </header>
-  <main>
-    <p>Nhấn nút bên dưới để bắt đầu trả lời câu hỏi:</p>
-    <a class="button" href="quiz.html">Bắt đầu Quiz</a>
-  </main>
+
+  <div class="content">
+    <p>Hoàng Văn Thái là một trong 34 đội viên đầu tiên của Đội Việt Nam Tuyên truyền giải phóng quân, được phân công phụ trách tình báo và kế hoạch tác chiến và cũng là Tổng Tham mưu trưởng đầu tiên của Quân đội nhân dân (QĐND) Việt Nam.</p>
+    <p>Đại tướng Hoàng Văn Thái được đánh giá là một trong những vị tướng có ảnh hưởng quan trọng nhất trong việc hình thành và phát triển của QĐND Việt Nam, người có công lớn trong hai cuộc kháng chiến chống Pháp và chống Mỹ của dân tộc.</p>
+    <p>“Ông là vị tướng trận mạc, sống nhân hậu, tình nghĩa được Quân đội ta và nhân dân ta mến phục”, đó là đánh giá của Đại tướng Võ Nguyên Giáp về tướng Hoàng Văn Thái.</p>
+
+    <figure>
+      <img src="../images/hoang-van-thai-1.jpg" alt="Đại tướng Hoàng Văn Thái">
+      <figcaption>Đại tướng Hoàng Văn Thái. Ảnh tư liệu</figcaption>
+    </figure>
+
+    <p>Tên thật là Hoàng Văn Xiêm, sinh năm 1915 trong một gia đình yêu nước ở xã Tây An, huyện Tiền Hải, tỉnh Thái Bình, đồng chí Hoàng Văn Thái sớm giác ngộ, tham gia hoạt động cách mạng (1936) và trở thành một Đảng viên Đảng Cộng sản Việt Nam lúc 23 tuổi. Năm 1940 ông bị thực dân Pháp bắt giam. Từ năm 1941-1945, trải qua cương vị chỉ huy Đội cứu quốc quân Bắc Sơn, Trưởng đoàn học viên Việt Nam tại Trường quân sự Liễu Châu (Trung Quốc), phụ trách công tác tình báo, tác chiến trong Đội Việt Nam Tuyên truyền Giải phóng quân, Hiệu trưởng Trường Quân chính kháng Nhật…, đồng chí Hoàng Văn Thái luôn kiên định, tuyệt đối trung thành với sự nghiệp cách mạng, có năng lực tổ chức, giàu trí sáng tạo, hoàn thành xuất sắc mọi nhiệm vụ được giao.</p>
+
+    <p>Cách mạng Tháng Tám thành công, ngày 7-9-1945, ông được Chủ tịch Hồ Chí Minh giao thành lập Bộ Tổng Tham mưu và là Tổng Tham mưu trưởng đầu tiên của QĐND Việt Nam, khi đó ông mới 30 tuổi. Trên cương vị này, ông đã góp phần quan trọng vào việc xây dựng cơ quan tham mưu chiến lược của quân đội, ngành tham mưu toàn quân phát triển và dần hoàn thiện giúp Bộ Quốc phòng chỉ đạo tác chiến và xây dựng lực lượng ngày một trưởng thành. Những ý kiến chỉ đạo của ông đã góp phần quan trọng vào chiến thắng Hà Nội “60 ngày đêm khói lửa”.</p>
+
+    <p>Ngày 20-1-1948, Hoàng Văn Thái nhận quân hàm Thiếu tướng trong đợt phong quân hàm cấp tướng đầu tiên. Ông làm Tham mưu trưởng và là Đảng ủy viên các chiến dịch lớn có ý nghĩa lịch sử đối với sự trưởng thành, chiến thắng của quân đội như Chiến dịch Biên giới (1950), Trung du, Hoàng Hoa Thám, Hà Nam Ninh, Hòa Bình, Tây Bắc, Thượng Lào.</p>
+
+    <p>Trong Chiến dịch Điện Biên Phủ (13-3 đến 7-5-1954), bên cạnh Tổng Tư lệnh Võ Nguyên Giáp, Hoàng Văn Thái làm Tham mưu trưởng chiến dịch, trực tiếp chỉ huy công tác tham mưu - tác chiến tại mặt trận, góp phần quan trọng vào chiến thắng Điện Biên Phủ. Năm 1958, ông là Chủ nhiệm Tổng cục Quân huấn, kiêm Chủ nhiệm Ủy ban Thể dục Thể thao nhà nước. Năm 1959, ông được phong hàm Trung tướng; từ 1961-1963 học tại Học viện Quân sự Cấp cao Bắc Kinh (Trung Quốc).</p>
+
+    <figure>
+      <img src="../images/hoang-van-thai-2.jpg" alt="Hoàng Văn Thái và Võ Nguyên Giáp">
+      <figcaption>Đồng chí Hoàng Văn Thái báo cáo tình hình chiến trường miền Nam với Đại tướng Võ Nguyên Giáp. Ảnh tư liệu</figcaption>
+    </figure>
+
+    <p>Trong cuộc kháng chiến chống Mỹ, khi Mỹ đưa quân vào miền Nam, ông được giao nhiệm vụ vào truyền đạt Nghị quyết 12 của Trung ương Đảng (khóa III) cho lãnh đạo, chỉ huy miền Nam (2-1966), sau đó được chỉ định làm quyền Bí thư Khu ủy 5, Tư lệnh kiêm Chính ủy Quân khu 5 (7-1966).</p>
+
+    <p>Hoàng Văn Thái đã cùng các đồng chí khác lãnh đạo, chỉ đạo cuộc Tổng tiến công và nổi dậy Xuân Mậu Thân 1968, đánh bại cuộc Hành quân Toàn thắng (1-1971), các cuộc hành quân Chenla I, Chenla II, Nguyễn Huệ, chiến dịch tiến công tổng hợp 1972. Sau Hiệp định Paris (1-1973), ông làm Phó tổng Tham mưu trưởng thứ nhất, phụ trách công tác tác chiến và chi viện chiến trường cùng Lê Trọng Tấn làm kế hoạch và chỉ đạo tổ trung tâm hoàn thành kế hoạch giải phóng miền Nam 1975-1976. Ông được phong hàm Thượng tướng năm 1974.</p>
+
+    <p>Hoàng Văn Thái cùng Bộ Tổng Tham mưu chỉ đạo việc xây dựng kế hoạch tác chiến chiến lược, thực hiện các ý định, chủ trương của Bộ Chính trị, tạo thế và lực cho ta nắm thời cơ giành thắng lợi trong cuộc Tổng tiến công và nổi dậy Xuân 1975.</p>
+
+    <p>Trong Chiến dịch Hồ Chí Minh, ông là Phó chủ tịch Thứ nhất Hội đồng chi viện cho chiến trường, Phó tổng Tham mưu trưởng thứ nhất. Trên thực tế ông đã đảm nhiệm vai trò Tổng Tham mưu trưởng lần thứ ba, thay cho đồng chí Văn Tiến Dũng bí mật vào Nam để trực tiếp chỉ huy chiến trường.</p>
+
+    <p>Từ 1974-1986, đồng chí Hoàng Văn Thái làm Thứ trưởng Bộ Quốc phòng kiêm Phó tổng Tham mưu trưởng (1974-1981), Ủy viên Thường vụ Quân ủy Trung ương.</p>
+
+    <p>Năm 1980, ông được phong quân hàm Đại tướng.</p>
+
+    <p>Đại tướng Hoàng Văn Thái mất ngày 2-7-1986. Tên của ông được đặt cho nhiều đường, phố trong cả nước.</p>
+
+    <p>Đại tướng Hoàng Văn Thái là vị tướng trận mạc. Với kiến thức và tài năng hiếm có, đồng chí đã trở thành nhà chỉ đạo, chỉ huy quân sự xuất sắc, nhà tham mưu lão luyện của quân đội. Đồng chí rất coi trọng nhân tố chính trị, yếu tố nhân dân, là người tổ chức, chỉ huy đầu tiên của Bộ Tổng Tham mưu - cơ quan chiến lược của QĐND Việt Nam, xứng đáng là “người học trò ưu tú của Chủ tịch Hồ Chí Minh”...</p>
+
+    <p>Hoàng Văn Thái được bầu vào Ủy viên Ban Chấp hành Trung ương Đảng Cộng sản Việt Nam khóa III-V; đại biểu Quốc hội khóa VII, được Nhà nước tặng nhiều huân chương cao quý: Sao vàng (truy tặng năm 2007); Hồ Chí Minh; Quân công hạng Nhất, Nhì; Kháng chiến hạng Nhất; Chiến thắng hạng Nhất; Huy chương Quân kỳ Quyết thắng.</p>
+
+    <p><strong>Đại tướng Hoàng Văn Thái – Tham mưu trưởng Chiến dịch Điện Biên Phủ</strong></p>
+
+    <p>Tháng 1-1948, trong đợt phong quân hàm cấp tướng đầu tiên của Quân đội, đồng chí Hoàng Văn Thái được phong Thiếu tướng. Trong chiến cuộc Đông Xuân 1953 - 1954, Thiếu tướng Văn Tiến Dũng, Đại đoàn trưởng kiêm Chính ủy Đại đoàn 320, được triệu về Việt Bắc giữ chức vụ Tổng Tham mưu trưởng Quân đội nhân dân Việt Nam. Thiếu tướng Hoàng Văn Thái được phân công nhiệm vụ lên Điện Biên thực hiện vai trò Tham mưu trưởng trong chiến dịch quan trọng mang mật danh Trần Đình.</p>
+
+    <p>Tại <a href="https://www.qdnd.vn/tag/dien-bien-phu-1686.html" target="_blank">Điện Biên Phủ</a>, ông đã phối hợp tốt với cố vấn Trung Quốc, cùng đưa ra và thực hiện những quyết sách quan trọng của Bộ chỉ huy Chiến dịch và Đại tướng Võ Nguyên Giáp từ việc chuyển phương châm tác chiến, cho đến công tác chuẩn bị, hậu cần, từng trận đánh. Ông là Tham mưu trưởng đắc lực bên cạnh Đại tướng Võ Nguyên Giáp với tài năng và sự cống hiến của mình. Sau này ông tiếp tục tham gia Chiến dịch Hồ Chí Minh, đến năm 1980 được phong quân hàm Đại tướng.</p>
+
+    <p>Trong Chiến dịch lịch sử Điện Biên Phủ, với vai trò Tham mưu trưởng Chiến dịch, ngày 26-11-1953, ông dẫn đầu đoàn cán bộ của Bộ tư lệnh tiền phương lên đường đi Tây Bắc nghiên cứu thực địa.</p>
+
+    <p>Ngày 30-11, đoàn đến Nà Sản, ông chủ trương cho đoàn dừng lại một ngày để nghiên cứu tập đoàn cứ điểm mà người Pháp vừa rút bỏ vào tháng 8 dù trận công kích của Quân đội nhân dân Việt Nam đã không đạt mục đích. Chính những nghiên cứu thực địa ban đầu này đã giúp chuẩn bị kinh nghiệm rất nhiều cho trận đánh sau này. Ngày 6-12, đoàn đến Chỉ huy sở đầu tiên tại hang Thẩm Púa và bắt tay vào việc nghiên cứu đề ra cách đánh. Sáng 12-1-1954, đoàn Bộ tư lệnh Chiến dịch của <a href="https://www.qdnd.vn/tag/dai-tuong-vo-nguyen-giap-981.html" target="_blank">Đại tướng Võ Nguyên Giáp</a> cũng đến nơi.</p>
+
+    <p>Như hầu hết các chỉ huy Việt Nam và cố vấn Trung Quốc khi đó, Tham mưu trưởng Hoàng Văn Thái cũng ủng hộ phương châm “đánh nhanh, thắng nhanh”, dù ông đã băn khoăn: “Làm thế nào để đưa pháo vào trận địa khi ta chủ trương đánh sớm, đánh nhanh mà chưa kịp làm đường cho xe kéo pháo? Làm thế nào để hạn chế tác dụng của máy bay, pháo binh, giảm bớt thương vong khi ta đánh liên tục cả ban ngày?”. Tuy nhiên, là một người lính, ông đã ra lệnh cho các đơn vị rút về vị trí tập kết theo đúng chỉ thị của Tổng tư lệnh, một quyết định mà lịch sử chứng minh sự đúng đắn của nó khi tạo nên một chiến thắng chấn động thế giới.</p>
+
+    <p>Sau này, ông đã viết về thời khắc lịch sử này: “Nắm vững chức năng, nhiệm vụ, kiên quyết phát huy tinh thần cách mạng tiến công trong những điều kiện khó khăn, phức tạp và khẩn trương nhất, luôn luôn vì thắng lợi của toàn quân mà ra sức vươn lên trong thực tế chiến đấu và xây dựng, đáp ứng yêu cầu chỉ đạo chỉ huy của trên... đó là những yếu tố chủ quan quyết định thành công của Bộ Tổng Tham mưu trong chiến cuộc Đông Xuân 1953 - 1954 và nói riêng trong Chiến dịch lịch sử Điện Biên Phủ”...</p>
+
+    <div class="source">
+      Nguồn bài viết:<br>
+      <a href="https://www.qdnd.vn/tuong-linh-viet-nam/dai-tuong-hoang-van-thai-tong-tham-muu-truong-dau-tien-cua-quan-doi-nhan-dan-viet-nam-669004" target="_blank">
+        Đại tướng Hoàng Văn Thái - Tổng Tham mưu trưởng đầu tiên của Quân đội nhân dân Việt Nam
+      </a><br>
+      <a href="https://www.qdnd.vn/quoc-phong-an-ninh/chien-thang-dien-bien-phu-moc-son-lich-su/anh-hung/dai-tuong-hoang-van-thai-tham-muu-truong-chien-dich-dien-bien-phu-770833" target="_blank">
+        Đại tướng Hoàng Văn Thái – Tham mưu trưởng Chiến dịch Điện Biên Phủ
+      </a>
+    </div>
+
+  </div>
+
 </body>
 </html>
