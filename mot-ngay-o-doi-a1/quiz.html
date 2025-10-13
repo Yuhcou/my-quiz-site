@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Một ngày ở đồi A1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background blur */
+    .background-blur {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('../images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      filter: blur(8px);
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .quiz-box {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 450px;
+      width: 90%;
+      z-index: 1;
+      position: relative;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    p.question {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #45a049;
+      transform: scale(1.02);
+    }
+    #result {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .home-button img {
+      width: 70px;
+      height: auto;
+      transition: 0.3s;
+    }
+    .home-button img:hover {
+      transform: scale(1.1);
+    }
+
+    .info-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background: #1976d2;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s, transform 0.3s;
+    }
+    .info-button:hover {
+      background-color: #1565c0;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background-blur"></div>
+
+  <a href="../home-page/index.html" class="home-button">
+    <img src="../images/logo-preview.png" alt="Trang chủ">
+  </a>
+
+  <div class="quiz-box">
+    <h1>Một ngày ở đồi A1</h1>
+    <p id="question" class="question"></p>
+    <div id="answers"></div>
+    <p id="result"></p>
+
+    <a href="info.html" class="info-button">Tìm hiểu thêm</a>
+  </div>
+
+  <script>
+    function shuffle(array) {
+      return array.sort(() => Math.random() - 0.5);
+    }
+
+    const questions = [
+      {
+        q: "Vì sao đồi A1 có vị trí đặc biệt quan trọng trong tập đoàn cứ điểm Điện Biên Phủ?",
+        options: shuffle([
+          "Là nơi đặt kho hậu cần của quân ta",
+          "Là điểm cao khống chế trung tâm Mường Thanh",
+          "Là căn cứ chỉ huy của Đại tướng Võ Nguyên Giáp",
+          "Là vị trí tập kết pháo của ta"
+        ]),
+        answer: "Là điểm cao khống chế trung tâm Mường Thanh"
+      },
+      {
+        q: "Bộ đội ta dùng biện pháp nào để đánh vào hầm ngầm của địch tại A1?",
+        options: shuffle([
+          "Đánh trực diện bằng xe tăng",
+          "Ném bom từ trên không",
+          "Đào hầm đặt thuốc nổ dưới lòng đồi",
+          "Tấn công bằng hỏa tiễn"
+        ]),
+        answer: "Đào hầm đặt thuốc nổ dưới lòng đồi"
+      },
+      {
+        q: "Trận đánh đồi A1 kéo dài bao nhiêu ngày đêm?",
+        options: shuffle([
+          "15 ngày đêm",
+          "25 ngày đêm",
+          "39 ngày đêm",
+          "50 ngày đêm"
+        ]),
+        answer: "39 ngày đêm"
+      },
+      {
+        q: "Kết quả cuối cùng của trận đánh đồi A1 là:",
+        options: shuffle([
+          "Quân Pháp giữ được vị trí đến cuối chiến dịch",
+          "Ta chiếm được A1, mở đường cho chiến thắng Điện Biên Phủ",
+          "Hai bên ký hiệp định ngừng bắn tại chỗ",
+          "Quân ta rút lui bảo toàn lực lượng"
+        ]),
+        answer: "Ta chiếm được A1, mở đường cho chiến thắng Điện Biên Phủ"
+      }
+    ];
+
+    const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+    document.getElementById("question").innerText = randomQuestion.q;
+
+    const answersDiv = document.getElementById("answers");
+    randomQuestion.options.forEach(option => {
+      const btn = document.createElement("button");
+      btn.innerText = option;
+      btn.onclick = () => checkAnswer(option);
+      answersDiv.appendChild(btn);
+    });
+
+    function checkAnswer(selected) {
+      const result = document.getElementById("result");
+      if (selected === randomQuestion.answer) {
+        result.innerText = "✅ Chính xác!";
+        result.style.color = "green";
+      } else {
+        result.innerText = "❌ Sai rồi, thử lại!";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Cánh đồng Mường Thanh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background blur */
+    .background-blur {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('../images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      filter: blur(8px);
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .quiz-box {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 450px;
+      width: 90%;
+      z-index: 1;
+      position: relative;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    p.question {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #45a049;
+      transform: scale(1.02);
+    }
+    #result {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .home-button img {
+      width: 70px;
+      height: auto;
+      transition: 0.3s;
+    }
+    .home-button img:hover {
+      transform: scale(1.1);
+    }
+
+    .info-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background: #1976d2;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s, transform 0.3s;
+    }
+    .info-button:hover {
+      background-color: #1565c0;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background-blur"></div>
+
+  <a href="../home-page/index.html" class="home-button">
+    <img src="../images/logo-preview.png" alt="Trang chủ">
+  </a>
+
+  <div class="quiz-box">
+    <h1>Cánh đồng Mường Thanh</h1>
+    <p id="question" class="question"></p>
+    <div id="answers"></div>
+    <p id="result"></p>
+
+    <a href="info.html" class="info-button">Tìm hiểu thêm</a>
+  </div>
+
+  <script>
+    function shuffle(array) {
+      return array.sort(() => Math.random() - 0.5);
+    }
+
+    const questions = [
+      {
+        q: "Ngày chiến dịch Điện Biên Phủ toàn thắng là:",
+        options: shuffle([
+          "6/5/1954",
+          "7/5/1954",
+          "8/5/1954",
+          "9/5/1954"
+        ]),
+        answer: "7/5/1954"
+      },
+      {
+        q: "Ai là Tổng chỉ huy quân đội Pháp tại Điện Biên Phủ?",
+        options: shuffle([
+          "Navarre",
+          "De Castries",
+          "Piroth",
+          "Bigeard"
+        ]),
+        answer: "De Castries"
+      },
+      {
+        q: "Lá cờ \"Quyết chiến, Quyết thắng\" được cắm trên hầm chỉ huy địch vào thời điểm nào?",
+        options: shuffle([
+          "Khoảng 15 giờ 30 phút ngày 7/5/1954",
+          "Nửa đêm 6/5/1954",
+          "Sáng 8/5/1954",
+          "Chiều 9/5/1954"
+        ]),
+        answer: "Khoảng 15 giờ 30 phút ngày 7/5/1954"
+      },
+      {
+        q: "Ý nghĩa lớn nhất của chiến thắng Điện Biên Phủ là gì?",
+        options: shuffle([
+          "Mở đường cho Hiệp định Genève, chấm dứt chiến tranh ở Đông Dương",
+          "Giúp ta mở rộng vùng giải phóng ở Tây Bắc",
+          "Là chiến thắng nhỏ trong cuộc kháng chiến",
+          "Chỉ mang tính biểu tượng quân sự"
+        ]),
+        answer: "Mở đường cho Hiệp định Genève, chấm dứt chiến tranh ở Đông Dương"
+      }
+    ];
+
+    const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+    document.getElementById("question").innerText = randomQuestion.q;
+
+    const answersDiv = document.getElementById("answers");
+    randomQuestion.options.forEach(option => {
+      const btn = document.createElement("button");
+      btn.innerText = option;
+      btn.onclick = () => checkAnswer(option);
+      answersDiv.appendChild(btn);
+    });
+
+    function checkAnswer(selected) {
+      const result = document.getElementById("result");
+      if (selected === randomQuestion.answer) {
+        result.innerText = "✅ Chính xác!";
+        result.style.color = "green";
+      } else {
+        result.innerText = "❌ Sai rồi, thử lại!";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
