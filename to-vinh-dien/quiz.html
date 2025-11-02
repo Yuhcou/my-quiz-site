@@ -110,6 +110,19 @@
       background-color: #1565c0;
       transform: scale(1.05);
     }
+
+    .chosen {
+      background-color: #f0ad4e !important;
+      color: white !important;
+    }
+    .correct {
+      background-color: #5cb85c !important;
+      color: white !important;
+    }
+    .wrong {
+      background-color: #d9534f !important;
+      color: white !important;
+    }
   </style>
 </head>
 <body>
@@ -179,18 +192,24 @@
     randomQuestion.options.forEach(option => {
       const btn = document.createElement("button");
       btn.innerText = option;
-      btn.onclick = () => checkAnswer(option);
+      btn.addEventListener('click', () => checkAnswer(btn, option), { once: true });
       answersDiv.appendChild(btn);
     });
 
-    function checkAnswer(selected) {
+    function checkAnswer(btn, selected) {
       const result = document.getElementById("result");
+      const buttons = answersDiv.querySelectorAll('button');
+      buttons.forEach(b => b.disabled = true);
+      btn.classList.add('chosen');
       if (selected === randomQuestion.answer) {
         result.innerText = "✅ Chính xác!";
         result.style.color = "green";
+        btn.classList.add('correct');
       } else {
-        result.innerText = "❌ Sai rồi, thử lại!";
+        result.innerText = "❌ Sai rồi!";
         result.style.color = "red";
+        btn.classList.add('wrong');
+        buttons.forEach(b => { if (b.innerText === randomQuestion.answer) b.classList.add('correct'); });
       }
     }
   </script>

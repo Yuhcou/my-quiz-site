@@ -169,18 +169,40 @@
     randomQuestion.options.forEach(option => {
       const btn = document.createElement("button");
       btn.innerText = option;
-      btn.onclick = () => checkAnswer(option);
+      // lock-all behavior: pass the button, handle only once
+      btn.addEventListener('click', () => checkAnswer(btn, option), { once: true });
       answersDiv.appendChild(btn);
     });
 
-    function checkAnswer(selected) {
+    function checkAnswer(btn, selected) {
       const result = document.getElementById("result");
+      // disable all buttons to lock in the answer
+      const buttons = answersDiv.querySelectorAll('button');
+      buttons.forEach(b => {
+        b.disabled = true;
+        b.style.opacity = '0.6';
+        b.style.pointerEvents = 'none';
+      });
+
+      // show result and highlight selections
       if (selected === randomQuestion.answer) {
         result.innerText = "✅ Chính xác!";
         result.style.color = "green";
+        btn.style.background = "#2e7d32";
+        btn.style.color = "white";
       } else {
-        result.innerText = "❌ Sai rồi, thử lại!";
+        result.innerText = "❌ Sai rồi!";
         result.style.color = "red";
+        btn.style.background = "#c62828";
+        btn.style.color = "white";
+        // highlight correct answer for observers
+        buttons.forEach(b => {
+          if (b.innerText === randomQuestion.answer) {
+            b.style.background = "#2e7d32";
+            b.style.color = "white";
+            b.style.opacity = "1";
+          }
+        });
       }
     }
   </script>
